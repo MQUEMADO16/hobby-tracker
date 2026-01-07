@@ -11,21 +11,18 @@ import {
 export default function Sidebar() {
   const {isOpen, onOpen, onOpenChange} = useDisclosure(); // Controls the opening and closing of attributes
 
-
   return (
     <>
-      {/* The HeroUI Documentation Example */}
-      {/* Replace this with our actual sidebar content */}
-      <Button onPress={onOpen}>Dashboard</Button>
-      <Drawer isOpen={isOpen} onOpenChange={onOpenChange} placement = "left">
+      <Button onPress={onOpen} >〉</Button>
+      <Drawer isDismissable = {false} backdrop={"transparent"} defaultOpen={true} isOpen={isOpen} onOpenChange={onOpenChange} placement = "left"> {/*Custom close button to be added*/}
         <DrawerContent>
           {(onClose) => (
             <>
               <DrawerHeader className="flex flex-col gap-1">Productive Tasks</DrawerHeader>
               <DrawerBody>
-                <Button onPress = {onOpen}>Hobbies</Button>
-                <Button onPress = {onOpen}>Statistics</Button>
-                <Button onPress = {onOpen}>Reminders</Button>
+                <Button onPress={onOpen}>Hobbies</Button>
+                <Button onPress={onOpen}>Statistics</Button>
+                <Button onPress={onOpen}>Reminders</Button>
               </DrawerBody>
             </>
           )}
