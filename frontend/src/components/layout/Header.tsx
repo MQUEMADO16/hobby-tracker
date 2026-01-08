@@ -16,28 +16,16 @@ export default function Header() {
         <Navbar isBlurred = {false} position="sticky" isBordered = {true} isMenuDefaultOpen = {true}>
             <NavbarBrand>
             <div>
-            ✍ HONE    
-            </div> {/*Custom logo to be added*/}
+            ✍ HONE     {/*Custom logo to be added*/}
+            </div>
             </NavbarBrand>
-              <NavbarContent justify = "center">
-                <NavbarItem>
-                    <p>
-                    Placeholder1
-                    </p>
-                </NavbarItem>
-                <NavbarItem>
-                    <p>
-                    Placeholder2
-                    </p>
-                </NavbarItem>
-             </NavbarContent>
              <NavbarContent justify= "end">
                 <Dropdown placement="bottom-end">
           <DropdownTrigger>
             <Avatar
               isBordered = {true}
               as="button"
-              className="transition-transform"
+              className="transform-top-right"
               color="secondary"
               name="John Doe"
               size="sm"
@@ -45,7 +33,7 @@ export default function Header() {
             />
           </DropdownTrigger>
           <DropdownMenu aria-label="Profile Actions" variant="flat">
-            <DropdownItem key="profile" className="h-14 gap-2">
+            <DropdownItem key="profile" className="h-10">
               <p className="font-semibold">username@example.com</p>
             </DropdownItem>
             <DropdownItem key="settings">Account</DropdownItem>

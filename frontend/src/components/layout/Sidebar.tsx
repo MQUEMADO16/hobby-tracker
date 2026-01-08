@@ -13,8 +13,10 @@ export default function Sidebar() {
 
   return (
     <>
+    
       <Button onPress={onOpen} >〉</Button>
-      <Drawer isDismissable = {false} backdrop={"transparent"} defaultOpen={true} isOpen={isOpen} onOpenChange={onOpenChange} placement = "left"> {/*Custom close button to be added*/}
+      <Drawer isDismissable = {false} backdrop={"transparent"}
+      size="xs" defaultOpen={true} isOpen={isOpen} onOpenChange={onOpenChange} placement = "left"> {/*Custom close button to be added*/}
         <DrawerContent>
           {(onClose) => (
             <>
