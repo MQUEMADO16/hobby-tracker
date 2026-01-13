@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import {
   Drawer,
   DrawerContent,
@@ -10,7 +11,6 @@ import {
 
 export default function Sidebar() {
   const {isOpen, onOpen, onOpenChange} = useDisclosure(); // Controls the opening and closing of attributes
-
   return (
     <>
     

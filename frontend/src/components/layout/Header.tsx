@@ -13,9 +13,9 @@ import {
 
 export default function Header() {
     return (
-        <Navbar isBlurred = {false} position="sticky" isBordered = {true} isMenuDefaultOpen = {true}>
+        <Navbar isBlurred = {false} position="sticky" isBordered = {true} isMenuDefaultOpen = {true} maxWidth="2xl">
             <NavbarBrand>
-            <div>
+            <div className="pl-60">
             ✍ HONE     {/*Custom logo to be added*/}
             </div>
             </NavbarBrand>
@@ -25,7 +25,7 @@ export default function Header() {
             <Avatar
               isBordered = {true}
               as="button"
-              className="transform-top-right"
+              className="transition-transform"
               color="secondary"
               name="John Doe"
               size="sm"
