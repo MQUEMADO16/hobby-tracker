@@ -11,12 +11,34 @@ import {
 
 export default function Sidebar() {
   const {isOpen, onOpen, onOpenChange} = useDisclosure(); // Controls the opening and closing of attributes
+  const [collapsed, setCollapsed] = React.useState(false);
+
+  const handleCollapsed = () => 
+  {
+    setCollapsed(!collapsed);
+  }
+
   return (
     <>
     
-      <Button onPress={onOpen} >〉</Button>
+      {/*}
+      <Drawer backdrop={"transparent"} placement="left" isOpen = {isBeingCollapsed}
+      size="xs" isDismissable = {true} className="">
+      <DrawerContent>
+      <DrawerHeader>Drawer Title</DrawerHeader>
+      <DrawerBody>
+      Hello
+      </DrawerBody>
+      </DrawerContent>
+      {*/}
+
+        <div className ={`sidebar ${collapsed ? "collapsed" : ""}`}>
+      <Button onPress={handleCollapsed} className="toggle-btn">
+        {collapsed ? "Expand" : "Collapse"}
+      </Button>
+
       <Drawer isDismissable = {false} backdrop={"transparent"}
-      size="xs" defaultOpen={true} isOpen={isOpen} onOpenChange={onOpenChange} placement = "left"> {/*Custom close button to be added*/}
+      size="xs" defaultOpen={true} isOpen={collapsed} onOpenChange={handleCollapsed} placement = "left"> {/*Custom close button to be added*/}
         <DrawerContent>
           {(onClose) => (
             <>
@@ -25,11 +47,13 @@ export default function Sidebar() {
                 <Button onPress={onOpen}>Hobbies</Button>
                 <Button onPress={onOpen}>Statistics</Button>
                 <Button onPress={onOpen}>Reminders</Button>
+                <Button onPress={onOpen}>Statistics</Button>
               </DrawerBody>
             </>
           )}
         </DrawerContent>
       </Drawer>
+      </div>
     </>
   );
 }

@@ -29,7 +29,7 @@ export default function Header() {
               color="secondary"
               name="John Doe"
               size="sm"
-              src="https://i.pravatar.cc/150?u=a042581f4e29026704d"   // Placeholder for avatar and icons...
+              src="https://frutigeraerogames.com/wp-content/uploads/2024/06/frutiger-aero-avatar-ICON.jpg"   // Placeholder for avatar and icons...
             />
           </DropdownTrigger>
           <DropdownMenu aria-label="Profile Actions" variant="flat">
