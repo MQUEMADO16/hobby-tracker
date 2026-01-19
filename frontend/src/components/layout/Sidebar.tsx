@@ -7,6 +7,7 @@ import {
   DrawerBody,
   Button,
   useDisclosure,
+  Tooltip
 } from "@heroui/react";
 
 export default function Sidebar() {
@@ -19,30 +20,46 @@ export default function Sidebar() {
   }
 
   return (
-    <>
-    
-      {/*}
-      <Drawer backdrop={"transparent"} placement="left" isOpen = {isBeingCollapsed}
-      size="xs" isDismissable = {true} className="">
-      <DrawerContent>
-      <DrawerHeader>Drawer Title</DrawerHeader>
-      <DrawerBody>
-      Hello
-      </DrawerBody>
-      </DrawerContent>
-      {*/}
-
+    <>    
         <div className ={`sidebar ${collapsed ? "collapsed" : ""}`}>
       <Button onPress={handleCollapsed} className="toggle-btn">
-        {collapsed ? "Expand" : "Collapse"}
+        {collapsed ? "≣" : "≣"}
       </Button>
 
-      <Drawer isDismissable = {false} backdrop={"transparent"}
-      size="xs" defaultOpen={true} isOpen={collapsed} onOpenChange={handleCollapsed} placement = "left"> {/*Custom close button to be added*/}
+      <Drawer 
+      hideCloseButton= {true} isDismissable = {false} backdrop={"transparent"}
+      size="xs" defaultOpen={true} isOpen={collapsed} onOpenChange={handleCollapsed} placement = "left"
+      classNames={{
+          base: "sm:data-[placement=right]:mt-16",
+        }}> {/*Custom close button to be added*/}
         <DrawerContent>
           {(onClose) => (
             <>
-              <DrawerHeader className="flex flex-col gap-1">Productive Tasks</DrawerHeader>
+              <DrawerHeader className="flex flex-col gap-1">Productive Tasks
+                <Tooltip content="Close">
+                  <Button
+                    isIconOnly
+                    className="tex-400"
+                    size="sm"
+                    variant="light"
+                    onPress={onClose}
+                  >
+                    <svg
+                      fill="none"
+                      height="20"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                      width="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="m13 17 5-5-5-5M6 17l5-5-5-5" />
+                    </svg>
+                  </Button>
+                </Tooltip>
+                </DrawerHeader>
               <DrawerBody>
                 <Button onPress={onOpen}>Hobbies</Button>
                 <Button onPress={onOpen}>Statistics</Button>
